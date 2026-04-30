@@ -35,252 +35,105 @@
             min-height: 100vh;
         }
 
-        .main-content {
-            flex: 1;
-        }
+        .main-content { flex: 1; }
 
-        .material-symbols-rounded {
-            vertical-align: middle;
-            color: var(--accent-color);
-        }
+        .material-symbols-rounded { vertical-align: middle; color: var(--accent-color); }
 
         .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--surface-color);
-            padding: 15px 20px;
-            border-radius: var(--border-radius);
-            margin-bottom: 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--surface-color); padding: 15px 20px;
+            border-radius: var(--border-radius); margin-bottom: 24px;
         }
         
-        .header-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .header-info { display: flex; align-items: center; gap: 15px; }
         
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            background-color: #333;
-        }
+        .logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background-color: #333; }
         
-        .business-name {
-            font-size: 16px;
-            font-weight: 600;
-            outline: none;
-        }
+        .business-name { font-size: 16px; font-weight: 600; outline: none; }
         
         .action-btn {
-            background: rgba(222, 255, 154, 0.1);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1); border: none; border-radius: 50%;
+            width: 40px; height: 40px; display: none; align-items: center;
+            justify-content: center; cursor: pointer; color: #fff;
         }
 
         .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            outline: none;
+            font-size: 20px; font-weight: 600; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px; outline: none;
         }
 
-        details {
-            background: var(--surface-color);
-            border-radius: var(--border-radius);
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
+        details { background: var(--surface-color); border-radius: var(--border-radius); margin-bottom: 12px; overflow: hidden; }
         
         summary {
-            padding: 18px 20px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            outline: none;
+            padding: 18px 20px; font-size: 16px; font-weight: 600; cursor: pointer;
+            list-style: none; display: flex; justify-content: space-between; align-items: center; outline: none;
         }
         
         summary::-webkit-details-marker { display: none; }
-        
-        summary::after {
-            content: '\e313';
-            font-family: 'Material Symbols Rounded';
-            color: var(--text-secondary);
-            font-size: 24px;
-            transition: transform 0.3s ease;
-        }
-        
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
+        summary::after { content: '\e313'; font-family: 'Material Symbols Rounded'; color: var(--text-secondary); font-size: 24px; transition: transform 0.3s ease; }
+        details[open] summary::after { transform: rotate(180deg); }
 
-        .items-list {
-            padding: 0 20px 20px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+        .items-list { padding: 0 20px 20px 20px; display: flex; flex-direction: column; gap: 16px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px dashed #333; }
+        .items-list .item:first-child { border-top: none; padding-top: 0; }
         
-        .item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 16px;
-            border-top: 1px dashed #333;
-        }
-        
-        .items-list .item:first-child {
-            border-top: none;
-            padding-top: 0;
-        }
-        
-        .item-name {
-            font-size: 15px;
-            color: var(--text-primary);
-            outline: none;
-        }
-        
-        .item-desc {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 4px;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-        }
+        .item-name { font-size: 15px; color: var(--text-primary); outline: none; }
+        .item-desc { font-size: 12px; color: var(--text-secondary); margin-top: 4px; font-family: 'Inter', sans-serif; outline: none; }
         
         .price {
-            background: rgba(222, 255, 154, 0.1);
-            color: var(--accent-color);
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            white-space: nowrap;
-            margin-left: 15px;
-            outline: none;
+            background: rgba(255, 255, 255, 0.1); color: var(--accent-color);
+            padding: 6px 12px; border-radius: 12px; font-size: 14px; font-weight: 600;
+            white-space: nowrap; margin-left: 15px; outline: none;
         }
-        
-        .price::after {
-            content: ' ₴';
-        }
+        .price::after { content: ' ₴'; }
 
-        .footer-links {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
+        .footer-links { margin-top: 30px; display: flex; flex-direction: column; gap: 10px; }
         .link-card {
-            background: var(--surface-color);
-            padding: 16px 20px;
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 15px;
-            font-weight: 600;
-            outline: none;
+            background: var(--surface-color); padding: 16px 20px; border-radius: var(--border-radius);
+            display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary);
+            font-size: 15px; font-weight: 600; outline: none;
         }
 
         .vsht-footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 40px;
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: var(--text-secondary);
-            letter-spacing: 1px;
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 12px;
+            color: var(--text-secondary); letter-spacing: 1px;
         }
-
-        .footer-divider {
-            opacity: 0.3;
-        }
-
+        .footer-divider { opacity: 0.3; }
         .write-us {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.2s;
+            display: flex; align-items: center; gap: 6px; color: var(--text-secondary); text-decoration: none; opacity: 0.7;
         }
+        .write-us .material-symbols-rounded { font-size: 14px; color: var(--text-secondary); }
 
-        .write-us:active {
-            opacity: 1;
-        }
-
-        .write-us .material-symbols-rounded {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
+        /* АДМІНКА ТА ЕКСПОРТ */
         #export-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent-color);
-            color: #000;
-            border: none;
-            padding: 15px 20px;
-            border-radius: 30px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(222, 255, 154, 0.3);
-            display: none;
-            z-index: 1000;
+            position: fixed; bottom: 20px; right: 20px; background: #fff; color: #000;
+            border: none; padding: 15px 20px; border-radius: 30px; font-family: 'Inter', sans-serif;
+            font-weight: 600; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: none; z-index: 1000;
         }
         
         #export-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            padding: 20px;
-            flex-direction: column;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 2000; padding: 20px; flex-direction: column;
         }
         
         #export-textarea {
-            width: 100%;
-            height: 80%;
-            background: #111;
-            color: #0f0;
-            font-family: monospace;
-            padding: 10px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            width: 100%; height: 80%; background: #111; color: #0f0; font-family: monospace;
+            padding: 10px; border: 1px solid #333; border-radius: 10px; margin-bottom: 20px;
         }
         
-        #close-overlay {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-weight: bold;
+        #close-overlay { background: #fff; color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: bold; }
+
+        #settings-panel {
+            display: none; position: fixed; top: 80px; right: 20px; background: #222;
+            border: 1px solid #444; border-radius: 15px; padding: 15px; z-index: 100;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 200px;
         }
+        .settings-label { font-size: 12px; color: #aaa; margin-bottom: 5px; margin-top: 10px; font-family: 'Inter', sans-serif;}
+        .settings-panel select, .settings-panel input[type="color"] {
+            width: 100%; padding: 8px; border-radius: 8px; border: none; background: #333; color: #fff; font-family: 'Inter', sans-serif;
+        }
+        .settings-panel select { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -288,12 +141,27 @@
     <div class="main-content">
         <div class="header">
             <div class="header-info">
-                <img src="https://via.placeholder.com/100" alt="Logo" class="logo">
-                <div class="business-name" class="editable">Coffee One</div>
+                <img src="https://via.placeholder.com/100" alt="Logo" class="logo" id="business-logo">
+                <div class="business-name editable">Coffee One</div>
             </div>
             <button class="action-btn" id="admin-dots">
-                <span class="material-symbols-rounded">more_horiz</span>
+                <span class="material-symbols-rounded" style="color: #fff;">settings</span>
             </button>
+        </div>
+
+        <div id="settings-panel" class="settings-panel">
+            <div class="settings-label">Шрифт сторінки</div>
+            <select id="font-selector">
+                <option value="'Unbounded', sans-serif">Unbounded</option>
+                <option value="'Mulish', sans-serif">Mulish</option>
+                <option value="'Inter', sans-serif">Inter</option>
+                <option value="'Cormorant', serif">Cormorant</option>
+                <option value="'Prata', serif">Prata</option>
+                <option value="'Marmelad', sans-serif">Marmelad</option>
+            </select>
+
+            <div class="settings-label">Акцентний колір</div>
+            <input type="color" id="color-selector" value="#DEFF9A">
         </div>
 
         <div class="section-title editable">
@@ -310,13 +178,6 @@
                         <div class="item-desc editable">100% Арабіка, 250 мл</div>
                     </div>
                     <div class="price editable">45</div>
-                </div>
-                <div class="item">
-                    <div>
-                        <div class="item-name editable">Лате Макіато</div>
-                        <div class="item-desc editable">З карамельним сиропом</div>
-                    </div>
-                    <div class="price editable">55</div>
                 </div>
             </div>
         </details>
@@ -355,15 +216,44 @@
         const isAdmin = urlParams.get('admin') === 'boss' || tgStartParam === 'adminboss';
 
         if (isAdmin) {
-            document.getElementById('admin-dots').style.display = 'flex';
+            const adminDots = document.getElementById('admin-dots');
+            const settingsPanel = document.getElementById('settings-panel');
+            const fontSelector = document.getElementById('font-selector');
+            const colorSelector = document.getElementById('color-selector');
+            const logo = document.getElementById('business-logo');
+            
+            adminDots.style.display = 'flex';
             document.getElementById('export-btn').style.display = 'block';
             
             document.querySelectorAll('.editable').forEach(el => {
                 el.setAttribute('contenteditable', 'true');
-                el.style.borderBottom = '1px dashed #333'; 
+                el.style.borderBottom = '1px dashed #555'; 
             });
 
+            // Відкриття панелі налаштувань
+            adminDots.addEventListener('click', () => {
+                settingsPanel.style.display = settingsPanel.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Зміна шрифту
+            fontSelector.addEventListener('change', (e) => {
+                document.documentElement.style.setProperty('--font-main', e.target.value);
+            });
+
+            // Зміна кольору
+            colorSelector.addEventListener('input', (e) => {
+                document.documentElement.style.setProperty('--accent-color', e.target.value);
+            });
+
+            // Зміна логотипу
+            logo.addEventListener('click', () => {
+                const newUrl = prompt("Вставте посилання на нове лого (наприклад: img/logo.webp):", logo.src);
+                if (newUrl) logo.src = newUrl;
+            });
+
+            // Експорт
             document.getElementById('export-btn').addEventListener('click', () => {
+                settingsPanel.style.display = 'none'; // Ховаємо панель перед копіюванням
                 let cleanDOM = document.documentElement.cloneNode(true);
                 
                 cleanDOM.querySelectorAll('.editable').forEach(el => {
@@ -372,6 +262,7 @@
                 });
                 cleanDOM.querySelector('#admin-dots').style.display = 'none';
                 cleanDOM.querySelector('#export-btn').style.display = 'none';
+                cleanDOM.querySelector('#settings-panel').style.display = 'none';
                 cleanDOM.querySelector('#export-overlay').style.display = 'none';
                 
                 let finalHTML = "<!DOCTYPE html>\n" + cleanDOM.outerHTML;
@@ -385,8 +276,5 @@
             });
         }
     </script>
-</body>
-</html>
-
 </body>
 </html>
