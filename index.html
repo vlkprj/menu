@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Міні-Апп | Меню</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Inter:wght@400;600&family=Marmelad&family=Mulish:wght@400;700&family=Prata&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+
+    <style>
+        /* === НАЛАШТУВАННЯ ДИЗАЙНУ (ЗМІНЮЙ ТУТ) === */
+        :root {
+            /* Шрифти на вибір: 
+               'Inter', 'Mulish', 'Unbounded', 'Cormorant', 'Prata', 'Marmelad'
+            */
+            --font-main: 'Unbounded', sans-serif;
+            
+            /* Кольори */
+            --bg-color: #121212;         /* Головний фон (темний) */
+            --surface-color: #1E1E1E;    /* Фон блоків/карток */
+            --accent-color: #DEFF9A;     /* Акцентний колір (кнопки, ціни, іконки) */
+            --text-primary: #FFFFFF;     /* Головний текст */
+            --text-secondary: #999999;   /* Допоміжний текст */
+            --border-radius: 20px;       /* Заокруглення всього */
+        }
+
+        /* === БАЗОВІ СТИЛІ === */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 20px;
+            padding-bottom: 40px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-rounded {
+            vertical-align: middle;
+            color: var(--accent-color);
+        }
+
+        /* === ШАПКА ПРОФІЛЮ === */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--surface-color);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+        }
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #333; /* Заглушка, якщо немає фото */
+        }
+        .business-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .action-btn {
+            background: rgba(222, 255, 154, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* === ЗАГОЛОВОК РОЗДІЛУ === */
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* === КАТЕГОРІЇ (АКОРДЕОН) === */
+        details {
+            background: var(--surface-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        summary {
+            padding: 18px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::-webkit-details-marker { display: none; } /* Ховаємо стандартний трикутник */
+        summary::after {
+            content: '\e313'; /* Іконка стрілки вниз з Material Symbols */
+            font-family: 'Material Symbols Rounded';
+            color: var(--text-secondary);
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        /* === СПИСОК СТРАВ/ТОВАРІВ === */
+        .items-list {
+            padding: 0 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px dashed #333;
+        }
+        .items-list .item:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+        .item-name {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+        .item-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            font-family: 'Inter', sans-serif; /* Опис краще читається простим шрифтом */
+        }
+        .price {
+            background: rgba(222, 255, 154, 0.1);
+            color: var(--accent-color);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        /* Автоматичний символ гривні */
+        .price::after {
+            content: ' ₴';
+        }
+
+        /* === НИЖНІ КНОПКИ (КОНТАКТИ) === */
+        .footer-links {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .link-card {
+            background: var(--surface-color);
+            padding: 16px 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        /* === ФУТЕР === */
+        .vsht-footer {
+            text-align: center;
+            margin-top: 40px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-info">
+            <img src="https://via.placeholder.com/100" alt="Logo" class="logo">
+            <div class="business-name">Coffee One</div>
+        </div>
+        <button class="action-btn">
+            <span class="material-symbols-rounded">more_horiz</span>
+        </button>
+    </div>
+
+    <div class="section-title">
+        <span class="material-symbols-rounded">menu_book</span>
+        Асортимент
+    </div>
+
+    <details open> <summary>Класична Кава</summary>
+        <div class="items-list">
+            <div class="item">
+                <div>
+                    <div class="item-name">Капучино</div>
+                    <div class="item-desc">100% Арабіка, 250 мл</div>
+                </div>
+                <div class="price">45</div> </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Лате Макіато</div>
+                    <div class="item-desc">З карамельним сиропом</div>
+                </div>
+                <div class="price">55</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Флет Вайт</div>
+                </div>
+                <div class="price">60</div>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Суші та Роли</summary>
+        <div class="items-list">
+            <div class="item">
+                <div>
+                    <div class="item-name">Філадельфія Класік</div>
+                    <div class="item-desc">Лосось, крем-сир, огірок, 280г</div>
+                </div>
+                <div class="price">280</div>
+            </div>
+            <div class="item">
+                <div>
+                    <div class="item-name">Дракон Сет</div>
+                    <div class="item-desc">Вугор, унагі соус, кунжут</div>
+                </div>
+                <div class="price">340</div>
+            </div>
+        </div>
+    </details>
+
+    <div class="footer-links">
+        <a href="tel:+380990000000" class="link-card">
+            <span class="material-symbols-rounded">call</span>
+            Зателефонувати
+        </a>
+        <a href="https://maps.google.com" target="_blank" class="link-card">
+            <span class="material-symbols-rounded">location_on</span>
+            Валки, вул. Центральна 1
+        </a>
+    </div>
+
+    <div class="vsht-footer">
+        ВШТ • РЕКЛАМА
+    </div>
+
+</body>
+</html>
