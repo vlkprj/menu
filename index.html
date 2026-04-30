@@ -8,35 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600&family=Inter:wght@400;600&family=Marmelad&family=Mulish:wght@400;700&family=Prata&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
 
     <style>
-        /* === НАЛАШТУВАННЯ ДИЗАЙНУ (ЗМІНЮЙ ТУТ) === */
         :root {
-            /* Шрифти на вибір: 
-               'Inter', 'Mulish', 'Unbounded', 'Cormorant', 'Prata', 'Marmelad'
-            */
             --font-main: 'Unbounded', sans-serif;
-            
-            /* Кольори */
-            --bg-color: #121212;         /* Головний фон (темний) */
-            --surface-color: #1E1E1E;    /* Фон блоків/карток */
-            --accent-color: #DEFF9A;     /* Акцентний колір (кнопки, ціни, іконки) */
-            --text-primary: #FFFFFF;     /* Головний текст */
-            --text-secondary: #999999;   /* Допоміжний текст */
-            --border-radius: 20px;       /* Заокруглення всього */
+            --bg-color: #121212;
+            --surface-color: #1E1E1E;
+            --accent-color: #DEFF9A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --border-radius: 20px;
         }
 
-        /* === БАЗОВІ СТИЛІ === */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: var(--font-main);
             background-color: var(--bg-color);
             color: var(--text-primary);
             padding: 20px;
-            padding-bottom: 40px;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1;
         }
 
         .material-symbols-rounded {
@@ -44,7 +43,6 @@
             color: var(--accent-color);
         }
 
-        /* === ШАПКА ПРОФІЛЮ === */
         .header {
             display: flex;
             align-items: center;
@@ -54,35 +52,39 @@
             border-radius: var(--border-radius);
             margin-bottom: 24px;
         }
+        
         .header-info {
             display: flex;
             align-items: center;
             gap: 15px;
         }
+        
         .logo {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            background-color: #333; /* Заглушка, якщо немає фото */
+            background-color: #333;
         }
+        
         .business-name {
             font-size: 16px;
             font-weight: 600;
+            outline: none;
         }
+        
         .action-btn {
             background: rgba(222, 255, 154, 0.1);
             border: none;
             border-radius: 50%;
             width: 40px;
             height: 40px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             cursor: pointer;
         }
 
-        /* === ЗАГОЛОВОК РОЗДІЛУ === */
         .section-title {
             font-size: 20px;
             font-weight: 600;
@@ -90,15 +92,16 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            outline: none;
         }
 
-        /* === КАТЕГОРІЇ (АКОРДЕОН) === */
         details {
             background: var(--surface-color);
             border-radius: var(--border-radius);
             margin-bottom: 12px;
             overflow: hidden;
         }
+        
         summary {
             padding: 18px 20px;
             font-size: 16px;
@@ -108,26 +111,30 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            outline: none;
         }
-        summary::-webkit-details-marker { display: none; } /* Ховаємо стандартний трикутник */
+        
+        summary::-webkit-details-marker { display: none; }
+        
         summary::after {
-            content: '\e313'; /* Іконка стрілки вниз з Material Symbols */
+            content: '\e313';
             font-family: 'Material Symbols Rounded';
             color: var(--text-secondary);
             font-size: 24px;
             transition: transform 0.3s ease;
         }
+        
         details[open] summary::after {
             transform: rotate(180deg);
         }
 
-        /* === СПИСОК СТРАВ/ТОВАРІВ === */
         .items-list {
             padding: 0 20px 20px 20px;
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
+        
         .item {
             display: flex;
             justify-content: space-between;
@@ -135,20 +142,26 @@
             padding-top: 16px;
             border-top: 1px dashed #333;
         }
+        
         .items-list .item:first-child {
             border-top: none;
             padding-top: 0;
         }
+        
         .item-name {
             font-size: 15px;
             color: var(--text-primary);
+            outline: none;
         }
+        
         .item-desc {
             font-size: 12px;
             color: var(--text-secondary);
             margin-top: 4px;
-            font-family: 'Inter', sans-serif; /* Опис краще читається простим шрифтом */
+            font-family: 'Inter', sans-serif;
+            outline: none;
         }
+        
         .price {
             background: rgba(222, 255, 154, 0.1);
             color: var(--accent-color);
@@ -158,19 +171,20 @@
             font-weight: 600;
             white-space: nowrap;
             margin-left: 15px;
+            outline: none;
         }
-        /* Автоматичний символ гривні */
+        
         .price::after {
             content: ' ₴';
         }
 
-        /* === НИЖНІ КНОПКИ (КОНТАКТИ) === */
         .footer-links {
             margin-top: 30px;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
+        
         .link-card {
             background: var(--surface-color);
             padding: 16px 20px;
@@ -182,95 +196,192 @@
             color: var(--text-primary);
             font-size: 15px;
             font-weight: 600;
+            outline: none;
         }
-        
-        /* === ФУТЕР === */
+
         .vsht-footer {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
             margin-top: 40px;
             font-family: 'Inter', sans-serif;
             font-size: 12px;
             color: var(--text-secondary);
-            letter-spacing: 2px;
-            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer-divider {
+            opacity: 0.3;
+        }
+
+        .write-us {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .write-us:active {
+            opacity: 1;
+        }
+
+        .write-us .material-symbols-rounded {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        #export-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(222, 255, 154, 0.3);
+            display: none;
+            z-index: 1000;
+        }
+        
+        #export-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            padding: 20px;
+            flex-direction: column;
+        }
+        
+        #export-textarea {
+            width: 100%;
+            height: 80%;
+            background: #111;
+            color: #0f0;
+            font-family: monospace;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        #close-overlay {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="header-info">
-            <img src="https://via.placeholder.com/100" alt="Logo" class="logo">
-            <div class="business-name">Coffee One</div>
+    <div class="main-content">
+        <div class="header">
+            <div class="header-info">
+                <img src="https://via.placeholder.com/100" alt="Logo" class="logo">
+                <div class="business-name" class="editable">Coffee One</div>
+            </div>
+            <button class="action-btn" id="admin-dots">
+                <span class="material-symbols-rounded">more_horiz</span>
+            </button>
         </div>
-        <button class="action-btn">
-            <span class="material-symbols-rounded">more_horiz</span>
-        </button>
-    </div>
 
-    <div class="section-title">
-        <span class="material-symbols-rounded">menu_book</span>
-        Асортимент
-    </div>
-
-    <details open> <summary>Класична Кава</summary>
-        <div class="items-list">
-            <div class="item">
-                <div>
-                    <div class="item-name">Капучино</div>
-                    <div class="item-desc">100% Арабіка, 250 мл</div>
-                </div>
-                <div class="price">45</div> </div>
-            <div class="item">
-                <div>
-                    <div class="item-name">Лате Макіато</div>
-                    <div class="item-desc">З карамельним сиропом</div>
-                </div>
-                <div class="price">55</div>
-            </div>
-            <div class="item">
-                <div>
-                    <div class="item-name">Флет Вайт</div>
-                </div>
-                <div class="price">60</div>
-            </div>
+        <div class="section-title editable">
+            <span class="material-symbols-rounded">menu_book</span>
+            Асортимент
         </div>
-    </details>
 
-    <details>
-        <summary>Суші та Роли</summary>
-        <div class="items-list">
-            <div class="item">
-                <div>
-                    <div class="item-name">Філадельфія Класік</div>
-                    <div class="item-desc">Лосось, крем-сир, огірок, 280г</div>
+        <details open>
+            <summary class="editable">Класична Кава</summary>
+            <div class="items-list">
+                <div class="item">
+                    <div>
+                        <div class="item-name editable">Капучино</div>
+                        <div class="item-desc editable">100% Арабіка, 250 мл</div>
+                    </div>
+                    <div class="price editable">45</div>
                 </div>
-                <div class="price">280</div>
-            </div>
-            <div class="item">
-                <div>
-                    <div class="item-name">Дракон Сет</div>
-                    <div class="item-desc">Вугор, унагі соус, кунжут</div>
+                <div class="item">
+                    <div>
+                        <div class="item-name editable">Лате Макіато</div>
+                        <div class="item-desc editable">З карамельним сиропом</div>
+                    </div>
+                    <div class="price editable">55</div>
                 </div>
-                <div class="price">340</div>
             </div>
+        </details>
+
+        <div class="footer-links">
+            <a href="tel:+380990000000" class="link-card editable">
+                <span class="material-symbols-rounded">call</span>
+                Зателефонувати
+            </a>
+            <a href="https://maps.google.com" target="_blank" class="link-card editable">
+                <span class="material-symbols-rounded">location_on</span>
+                Валки, вул. Центральна 1
+            </a>
         </div>
-    </details>
-
-    <div class="footer-links">
-        <a href="tel:+380990000000" class="link-card">
-            <span class="material-symbols-rounded">call</span>
-            Зателефонувати
-        </a>
-        <a href="https://maps.google.com" target="_blank" class="link-card">
-            <span class="material-symbols-rounded">location_on</span>
-            Валки, вул. Центральна 1
-        </a>
     </div>
 
     <div class="vsht-footer">
-        ВШТ • РЕКЛАМА
+        <span>ВШТ • РЕКЛАМА</span>
+        <span class="footer-divider">•</span>
+        <a href="https://t.me/valkysho_bot" target="_blank" class="write-us">
+            <span class="material-symbols-rounded">chat_bubble</span>
+            Написати
+        </a>
     </div>
 
+    <button id="export-btn">ЗБЕРЕГТИ КОД</button>
+
+    <div id="export-overlay">
+        <textarea id="export-textarea"></textarea>
+        <button id="close-overlay">ЗАКРИТИ ТА ПОВЕРНУТИСЬ</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const isAdmin = urlParams.get('admin') === 'boss';
+
+        if (isAdmin) {
+            document.getElementById('admin-dots').style.display = 'flex';
+            document.getElementById('export-btn').style.display = 'block';
+            
+            document.querySelectorAll('.editable').forEach(el => {
+                el.setAttribute('contenteditable', 'true');
+                el.style.borderBottom = '1px dashed #333'; 
+            });
+
+            document.getElementById('export-btn').addEventListener('click', () => {
+                let cleanDOM = document.documentElement.cloneNode(true);
+                
+                cleanDOM.querySelectorAll('.editable').forEach(el => {
+                    el.removeAttribute('contenteditable');
+                    el.style.borderBottom = '';
+                });
+                cleanDOM.querySelector('#admin-dots').style.display = 'none';
+                cleanDOM.querySelector('#export-btn').style.display = 'none';
+                cleanDOM.querySelector('#export-overlay').style.display = 'none';
+                
+                let finalHTML = "<!DOCTYPE html>\n" + cleanDOM.outerHTML;
+                
+                document.getElementById('export-overlay').style.display = 'flex';
+                document.getElementById('export-textarea').value = finalHTML;
+            });
+
+            document.getElementById('close-overlay').addEventListener('click', () => {
+                document.getElementById('export-overlay').style.display = 'none';
+            });
+        }
+    </script>
 </body>
 </html>
