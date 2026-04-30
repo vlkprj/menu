@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="uk">
-<head>
+<html lang="uk" style="--tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh; --accent-color: #FFCB77; --font-main: &quot;Mulish&quot;, sans-serif;"><head>
     <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Міні-Апп | Меню</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Cormorant:wght@600&family=Inter+Tight:wght@400;600&family=Inter:wght@400;600&family=Marmelad&family=Montserrat+Alternates:wght@400;600&family=Montserrat:wght@400;600&family=Mulish:wght@400;700&family=Prata&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&amp;family=Cormorant:wght@600&amp;family=Inter+Tight:wght@400;600&amp;family=Inter:wght@400;600&amp;family=Marmelad&amp;family=Montserrat+Alternates:wght@400;600&amp;family=Montserrat:wght@400;600&amp;family=Mulish:wght@400;700&amp;family=Prata&amp;family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&amp;family=Unbounded:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <style>
@@ -180,15 +179,15 @@
     <div class="main-content">
         <div class="header">
             <div class="header-info">
-                <img src="https://via.placeholder.com/100" alt="Logo" class="logo" id="business-logo">
-                <div class="business-name editable">Назва Бізнесу</div>
+                <img src="img/coffeeone.webp" alt="Logo" class="logo" id="business-logo">
+                <div class="business-name editable" style="">CoffeeOne</div>
             </div>
-            <button class="action-btn" id="admin-dots">
+            <button class="action-btn" id="admin-dots" style="display: none;">
                 <span class="material-symbols-rounded" style="color: #fff;">settings</span>
             </button>
         </div>
 
-        <div id="settings-panel" class="settings-panel">
+        <div id="settings-panel" class="settings-panel" style="display: none;">
             <div class="settings-label">Шрифт сторінки</div>
             <select id="font-selector">
                 <option value="'Unbounded', sans-serif">Unbounded (Модерн)</option>
@@ -206,168 +205,164 @@
 
             <div class="settings-label">Кольорова палітра</div>
             <div class="palette-grid" id="palette-container">
-                </div>
+                <div class="color-swatch" style="background-color: rgb(222, 255, 154);"></div><div class="color-swatch" style="background-color: rgb(212, 196, 251);"></div><div class="color-swatch" style="background-color: rgb(255, 181, 167);"></div><div class="color-swatch" style="background-color: rgb(253, 240, 213);"></div><div class="color-swatch" style="background-color: rgb(168, 218, 220);"></div><div class="color-swatch" style="background-color: rgb(255, 203, 119);"></div><div class="color-swatch" style="background-color: rgb(255, 255, 255);"></div><div class="color-swatch" style="background-color: rgb(212, 175, 55);"></div></div>
         </div>
 
 <!--ТУТ--> 
 
-        <div class="section-title editable">
+        <div class="section-title editable" style="">
             <span class="material-symbols-rounded">menu_book</span>
-            Асортимент
-        </div>
+            Меню &nbsp; &nbsp; &nbsp; &nbsp;</div>
 
         <div id="menu-wrapper">
-            <details open>
-                <summary class="editable">Сніданки</summary>
+            <details>
+                <summary class="editable" style="">Сніданки</summary>
                 <div class="items-list">
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Сніданок з лососем та авокадо</div>
+                            <div class="item-name editable" style="">Сніданок з лососем та авокадо</div>
                         </div>
-                        <div class="price editable">200</div>
+                        <div class="price editable" style="">200</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Англійський сніданок</div>
+                            <div class="item-name editable" style="">Англійський сніданок</div>
                         </div>
-                        <div class="price editable">170</div>
+                        <div class="price editable" style="">170</div>
                     </div>
                 </div>
-                <button class="admin-add-item-btn">+ Додати позицію</button>
+                <button class="admin-add-item-btn" style="display: none;">+ Додати позицію</button>
             </details>
 
             <details>
-                <summary class="editable">Млинці та Сирники</summary>
+                <summary class="editable" style="">Млинці та Сирники</summary>
                 <div class="items-list">
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Млинці з лососем і авокадо</div>
+                            <div class="item-name editable" style="">Млинці з лососем і авокадо</div>
                         </div>
-                        <div class="price editable">180</div>
+                        <div class="price editable" style="">180</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Млинці з фруктами та малиновим соусом</div>
+                            <div class="item-name editable" style="">Млинці з фруктами та малиновим соусом</div>
                         </div>
-                        <div class="price editable">150</div>
+                        <div class="price editable" style="">150</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Сирники з вишнею</div>
+                            <div class="item-name editable" style="">Сирники з вишнею</div>
                         </div>
-                        <div class="price editable">160</div>
+                        <div class="price editable" style="">160</div>
                     </div>
                 </div>
-                <button class="admin-add-item-btn">+ Додати позицію</button>
+                <button class="admin-add-item-btn" style="display: none;">+ Додати позицію</button>
             </details>
 
             <details>
-                <summary class="editable">Гонконгські вафлі</summary>
+                <summary class="editable" style="">Гонконгські вафлі</summary>
                 <div class="items-list">
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Вафля «Креветка»</div>
+                            <div class="item-name editable" style="">Вафля «Креветка»</div>
                         </div>
-                        <div class="price editable">220</div>
+                        <div class="price editable" style="">220</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Вафля «Риба-авокадо»</div>
+                            <div class="item-name editable" style="">Вафля «Риба-авокадо»</div>
                         </div>
-                        <div class="price editable">240</div>
+                        <div class="price editable" style="">240</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Вафля «Фрукти-морозиво»</div>
+                            <div class="item-name editable" style="">Вафля «Фрукти-морозиво»</div>
                         </div>
-                        <div class="price editable">185</div>
+                        <div class="price editable" style="">185</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Вафля «Курка-ананас»</div>
+                            <div class="item-name editable" style="">Вафля «Курка-ананас»</div>
                         </div>
-                        <div class="price editable">180</div>
+                        <div class="price editable" style="">180</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Вафля «Банан-нутелла»</div>
+                            <div class="item-name editable" style="">Вафля «Банан-нутелла»</div>
                         </div>
-                        <div class="price editable">145</div>
+                        <div class="price editable" style="">145</div>
                     </div>
                 </div>
-                <button class="admin-add-item-btn">+ Додати позицію</button>
+                <button class="admin-add-item-btn" style="display: none;">+ Додати позицію</button>
             </details>
 
             <details>
-                <summary class="editable">Салати</summary>
+                <summary class="editable" style="">Салати</summary>
                 <div class="items-list">
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Цезар з куркою</div>
+                            <div class="item-name editable" style="">Цезар з куркою</div>
                         </div>
-                        <div class="price editable">270</div>
+                        <div class="price editable" style="">270</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Цезар з лососем</div>
+                            <div class="item-name editable" style="">Цезар з лососем</div>
                         </div>
-                        <div class="price editable">290</div>
+                        <div class="price editable" style="">290</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Цезар з креветками</div>
+                            <div class="item-name editable" style="">Цезар з креветками</div>
                         </div>
-                        <div class="price editable">300</div>
+                        <div class="price editable" style="">300</div>
                     </div>
                 </div>
-                <button class="admin-add-item-btn">+ Додати позицію</button>
+                <button class="admin-add-item-btn" style="display: none;">+ Додати позицію</button>
             </details>
 
-            <details>
-                <summary class="editable">Напої та Десерти</summary>
+            <details open="">
+                <summary class="editable" style="">Напої та Десерти</summary>
                 <div class="items-list">
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Кава в асортименті</div>
+                            <div class="item-name editable" style="">Кава в асортименті</div>
                         </div>
-                        <div class="price editable">0</div>
+                        <div class="price editable" style="">0</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Натуральні чаї</div>
+                            <div class="item-name editable" style="">Натуральні чаї</div>
                         </div>
-                        <div class="price editable">0</div>
+                        <div class="price editable" style="">0</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Лимонади / Смузі</div>
+                            <div class="item-name editable" style="">Лимонади / Смузі</div>
                         </div>
-                        <div class="price editable">0</div>
+                        <div class="price editable" style="">0</div>
                     </div>
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Морозиво</div>
+                            <div class="item-name editable" style="">Морозиво</div>
                         </div>
-                        <div class="price editable">0</div>
+                        <div class="price editable" style="">0</div>
                     </div>
                 </div>
-                <button class="admin-add-item-btn">+ Додати позицію</button>
+                <button class="admin-add-item-btn" style="display: none;">+ Додати позицію</button>
             </details>
         </div>
         
-        <button id="add-section-btn">+ ДОДАТИ НОВИЙ РОЗДІЛ</button>
+        <button id="add-section-btn" style="display: none;">+ ДОДАТИ НОВИЙ РОЗДІЛ</button>
        
 <!--КОНТАКТИ АДРЕСА--> 
 
         <div class="footer-links">
-            <a href="tel:+380990000000" class="link-card editable">
+            <a href="tel:+380990000000" class="link-card editable" style="">
                 <span class="material-symbols-rounded">call</span>
-                Зателефонувати
-            </a>
-            <a href="https://maps.google.com" target="_blank" class="link-card editable">
-                <span class="material-symbols-rounded">location_on</span>
-                Валки, вул. Центральна 1
-            </a>
+                +380731000506 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</a>
+            <a href="https://maps.google.com" target="_blank" class="link-card editable" style="">
+                <span class="material-symbols-rounded">location_pin</span>проспект &nbsp;Григорія Сковороди, 1</a>
         </div>
     </div>
 
@@ -382,9 +377,9 @@
         </a>
     </div>
 
-    <button id="export-btn">ЗБЕРЕГТИ КОД</button>
+    <button id="export-btn" style="display: none;">ЗБЕРЕГТИ КОД</button>
 
-    <div id="export-overlay">
+    <div id="export-overlay" style="display: none;">
         <textarea id="export-textarea"></textarea>
         <button id="close-overlay">ЗАКРИТИ ТА ПОВЕРНУТИСЬ</button>
     </div>
@@ -518,5 +513,6 @@
             });
         }
     </script>
-</body>
-</html>
+
+
+</body></html>
