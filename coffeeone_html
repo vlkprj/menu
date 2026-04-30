@@ -175,6 +175,8 @@
 </head>
 <body>
 
+<!--ХЕДЕР--> 
+
     <div class="main-content">
         <div class="header">
             <div class="header-info">
@@ -216,12 +218,135 @@
 
         <div id="menu-wrapper">
             <details open>
-                <summary class="editable">Приклад Категорії</summary>
+                <summary class="editable">Сніданки</summary>
                 <div class="items-list">
                     <div class="item">
                         <div class="item-content-wrapper">
-                            <div class="item-name editable">Назва позиції</div>
-                            <div class="item-desc editable">Опис позиції (можна стерти)</div>
+                            <div class="item-name editable">Сніданок з лососем та авокадо</div>
+                        </div>
+                        <div class="price editable">200</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Англійський сніданок</div>
+                        </div>
+                        <div class="price editable">170</div>
+                    </div>
+                </div>
+                <button class="admin-add-item-btn">+ Додати позицію</button>
+            </details>
+
+            <details>
+                <summary class="editable">Млинці та Сирники</summary>
+                <div class="items-list">
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Млинці з лососем і авокадо</div>
+                        </div>
+                        <div class="price editable">180</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Млинці з фруктами та малиновим соусом</div>
+                        </div>
+                        <div class="price editable">150</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Сирники з вишнею</div>
+                        </div>
+                        <div class="price editable">160</div>
+                    </div>
+                </div>
+                <button class="admin-add-item-btn">+ Додати позицію</button>
+            </details>
+
+            <details>
+                <summary class="editable">Гонконгські вафлі</summary>
+                <div class="items-list">
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Вафля «Креветка»</div>
+                        </div>
+                        <div class="price editable">220</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Вафля «Риба-авокадо»</div>
+                        </div>
+                        <div class="price editable">240</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Вафля «Фрукти-морозиво»</div>
+                        </div>
+                        <div class="price editable">185</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Вафля «Курка-ананас»</div>
+                        </div>
+                        <div class="price editable">180</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Вафля «Банан-нутелла»</div>
+                        </div>
+                        <div class="price editable">145</div>
+                    </div>
+                </div>
+                <button class="admin-add-item-btn">+ Додати позицію</button>
+            </details>
+
+            <details>
+                <summary class="editable">Салати</summary>
+                <div class="items-list">
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Цезар з куркою</div>
+                        </div>
+                        <div class="price editable">270</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Цезар з лососем</div>
+                        </div>
+                        <div class="price editable">290</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Цезар з креветками</div>
+                        </div>
+                        <div class="price editable">300</div>
+                    </div>
+                </div>
+                <button class="admin-add-item-btn">+ Додати позицію</button>
+            </details>
+
+            <details>
+                <summary class="editable">Напої та Десерти</summary>
+                <div class="items-list">
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Кава в асортименті</div>
+                        </div>
+                        <div class="price editable">0</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Натуральні чаї</div>
+                        </div>
+                        <div class="price editable">0</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Лимонади / Смузі</div>
+                        </div>
+                        <div class="price editable">0</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable">Морозиво</div>
                         </div>
                         <div class="price editable">0</div>
                     </div>
@@ -231,6 +356,9 @@
         </div>
         
         <button id="add-section-btn">+ ДОДАТИ НОВИЙ РОЗДІЛ</button>
+       
+<!--КОНТАКТИ АДРЕСА--> 
+
         <div class="footer-links">
             <a href="tel:+380990000000" class="link-card editable">
                 <span class="material-symbols-rounded">call</span>
