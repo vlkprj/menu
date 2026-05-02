@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk" data-theme="dark">
+<html lang="uk" data-theme="dark-matcha">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -10,33 +10,70 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Cormorant:wght@600&family=Inter+Tight:wght@400;600&family=Inter:wght@400;600&family=Marmelad&family=Montserrat+Alternates:wght@400;600&family=Montserrat:wght@400;600&family=Mulish:wght@400;700&family=Prata&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Cormorant:wght@600&family=Didact+Gothic&family=Inter+Tight:wght@400;600&family=Inter:wght@400;600&family=Manrope:wght@400;600&family=Marmelad&family=Montserrat+Alternates:wght@400;600&family=Montserrat:wght@400;600&family=Mulish:wght@400;700&family=Prata&family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <style>
         :root {
             --font-main: 'Unbounded', sans-serif;
-            --accent-color: #DEFF9A;
-            --border-radius: 16px;
-            
-            --bg-color: #121212;
-            --surface-color: #1E1E1E;
-            --text-primary: #FFFFFF;
-            --text-secondary: #999999;
-            --border-color: #333333;
-            --shadow-color: rgba(0, 0, 0, 0.5);
-            --price-bg: rgba(255, 255, 255, 0.1);
+            --border-radius: 20px;
         }
 
-        [data-theme="light"] {
-            --bg-color: #F5F5F7;
-            --surface-color: #FFFFFF;
-            --text-primary: #1D1D1F;
-            --text-secondary: #86868B;
-            --border-color: #E5E5EA;
-            --shadow-color: rgba(0, 0, 0, 0.05);
-            --price-bg: rgba(0, 0, 0, 0.05);
+        /* 1: Класика білий + чорний */
+        [data-theme="classic-light"] {
+            --bg-color: #F5F5F7; --surface-color: #FFFFFF; 
+            --text-primary: #1D1D1F; --text-secondary: #86868B; 
+            --accent-color: #000000; --border-color: #E5E5EA;
+            --price-bg: rgba(0, 0, 0, 0.04); --shadow-color: rgba(0, 0, 0, 0.03);
+        }
+
+        /* 2: Чорний + салатовий (матча) */
+        [data-theme="dark-matcha"] {
+            --bg-color: #121212; --surface-color: #1E1E1E; 
+            --text-primary: #FFFFFF; --text-secondary: #999999; 
+            --accent-color: #DEFF9A; --border-color: #2C2C2C;
+            --price-bg: rgba(222, 255, 154, 0.1); --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 3: Sand & Bark */
+        [data-theme="sand-bark"] {
+            --bg-color: #E3DED2; --surface-color: #EBE6DB; 
+            --text-primary: #1A1915; --text-secondary: #6B665A; 
+            --accent-color: #3F3C32; --border-color: #D3CDC0;
+            --price-bg: rgba(63, 60, 50, 0.08); --shadow-color: rgba(63, 60, 50, 0.04);
+        }
+
+        /* 4: Cloud & Periwinkle */
+        [data-theme="cloud-peri"] {
+            --bg-color: #F9F9F6; --surface-color: #FFFFFF; 
+            --text-primary: #1C1C1F; --text-secondary: #7A7C8F; 
+            --accent-color: #8488AD; --border-color: #EBEBE6;
+            --price-bg: rgba(132, 136, 173, 0.12); --shadow-color: rgba(132, 136, 173, 0.05);
+        }
+
+        /* 5: Almond & Espresso */
+        [data-theme="almond-espresso"] {
+            --bg-color: #EBE4DA; --surface-color: #F4EFEB; 
+            --text-primary: #24221F; --text-secondary: #7A746B; 
+            --accent-color: #36332E; --border-color: #DCD4C9;
+            --price-bg: rgba(54, 51, 46, 0.08); --shadow-color: rgba(54, 51, 46, 0.04);
+        }
+
+        /* 6: Oat & Charcoal */
+        [data-theme="oat-charcoal"] {
+            --bg-color: #F3EBE1; --surface-color: #FAF5EE; 
+            --text-primary: #141312; --text-secondary: #6B6359; 
+            --accent-color: #181715; --border-color: #E6DCD1;
+            --price-bg: rgba(24, 23, 21, 0.06); --shadow-color: rgba(24, 23, 21, 0.03);
+        }
+
+        /* 7: Bone & Navy */
+        [data-theme="bone-navy"] {
+            --bg-color: #EEE6D9; --surface-color: #F6EFE5; 
+            --text-primary: #181C26; --text-secondary: #636D82; 
+            --accent-color: #304877; --border-color: #DFD5C5;
+            --price-bg: rgba(48, 72, 119, 0.1); --shadow-color: rgba(48, 72, 119, 0.06);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +82,7 @@
             font-family: var(--font-main);
             background-color: var(--bg-color);
             color: var(--text-primary);
-            padding: 20px;
+            padding: 24px 20px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
@@ -53,6 +90,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         .main-content { flex: 1; }
@@ -60,45 +98,49 @@
 
         .header {
             display: flex; align-items: center; justify-content: space-between;
-            background: var(--surface-color); padding: 15px 20px;
-            border-radius: var(--border-radius); margin-bottom: 24px;
+            background: var(--surface-color); padding: 16px 24px;
+            border-radius: var(--border-radius); margin-bottom: 32px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px var(--shadow-color);
+            box-shadow: 0 8px 24px var(--shadow-color);
+            transition: all 0.4s ease;
         }
-        .header-info { display: flex; align-items: center; gap: 15px; }
-        .logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background-color: var(--border-color); }
-        .business-name { font-size: 16px; font-weight: 600; outline: none; }
+        .header-info { display: flex; align-items: center; gap: 16px; }
+        .logo { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; background-color: var(--border-color); }
+        .business-name { font-size: 17px; font-weight: 600; outline: none; letter-spacing: -0.02em; }
         
         .action-btn {
             background: var(--price-bg); border: none; border-radius: 50%;
-            width: 40px; height: 40px; display: none; align-items: center;
+            width: 44px; height: 44px; display: none; align-items: center;
             justify-content: center; cursor: pointer; color: var(--text-primary);
+            transition: transform 0.2s;
         }
+        .action-btn:active { transform: scale(0.95); }
 
         .section-title {
-            font-size: 20px; font-weight: 600; margin-bottom: 16px;
-            display: flex; align-items: center; gap: 8px; outline: none;
+            font-size: 22px; font-weight: 600; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px; outline: none;
+            letter-spacing: -0.02em;
         }
 
-        details { 
-            margin-bottom: 16px; 
-        }
+        details { margin-bottom: 20px; }
+        
         summary {
             background: var(--surface-color); 
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            padding: 18px 20px; font-size: 16px; font-weight: 600; cursor: pointer;
+            padding: 20px 24px; font-size: 17px; font-weight: 600; cursor: pointer;
             list-style: none; display: flex; justify-content: space-between; align-items: center; outline: none;
-            box-shadow: 0 4px 12px var(--shadow-color);
+            box-shadow: 0 4px 16px var(--shadow-color);
             transition: all 0.3s ease;
+            letter-spacing: -0.01em;
         }
         summary::-webkit-details-marker { display: none; }
-        summary::after { content: '\e313'; font-family: 'Material Symbols Rounded'; color: var(--text-secondary); font-size: 24px; transition: transform 0.3s ease; }
+        summary::after { content: '\e313'; font-family: 'Material Symbols Rounded'; color: var(--text-secondary); font-size: 26px; transition: transform 0.3s ease; }
         
         details[open] summary {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-            border-bottom: 1px dashed var(--border-color);
+            border-bottom: 1px solid transparent;
             box-shadow: none;
         }
         details[open] summary::after { transform: rotate(180deg); }
@@ -109,111 +151,118 @@
             border-top: none;
             border-bottom-left-radius: var(--border-radius);
             border-bottom-right-radius: var(--border-radius);
-            box-shadow: 0 8px 12px var(--shadow-color);
+            box-shadow: 0 12px 24px var(--shadow-color);
+            padding-bottom: 8px;
         }
 
-        .items-list { padding: 0 20px 20px 20px; display: flex; flex-direction: column; gap: 16px; }
-        .item { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px dashed var(--border-color); }
-        .items-list .item:first-child { border-top: none; padding-top: 15px; }
+        .items-list { padding: 0 24px 16px 24px; display: flex; flex-direction: column; gap: 16px; }
+        .item { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 16px; border-top: 1px solid var(--border-color); }
+        .items-list .item:first-child { border-top: none; padding-top: 12px; }
         
-        .item-content-wrapper { flex: 1; padding-right: 15px; min-width: 0; }
-        .item-name { font-size: 15px; color: var(--text-primary); outline: none; word-wrap: break-word; overflow-wrap: break-word; }
-        .item-desc { font-size: 12px; color: var(--text-secondary); margin-top: 4px; font-family: 'Inter', sans-serif; outline: none; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.4; }
+        .item-content-wrapper { flex: 1; padding-right: 16px; min-width: 0; }
+        .item-name { font-size: 16px; font-weight: 600; color: var(--text-primary); outline: none; word-wrap: break-word; overflow-wrap: break-word; }
+        .item-desc { font-size: 13px; color: var(--text-secondary); margin-top: 6px; font-family: 'Inter', sans-serif; outline: none; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.5; }
         
         .price {
             background: var(--price-bg); color: var(--accent-color);
-            padding: 6px 12px; border-radius: 12px; font-size: 14px; font-weight: 600;
+            padding: 8px 14px; border-radius: 14px; font-size: 15px; font-weight: 600;
             white-space: nowrap; outline: none; flex-shrink: 0;
+            letter-spacing: -0.02em;
         }
         .price::after { content: ' ₴'; }
 
-        .footer-links { margin-top: 30px; display: flex; flex-direction: column; gap: 10px; }
+        .footer-links { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
         .link-card {
-            background: var(--surface-color); padding: 16px 20px; border-radius: var(--border-radius);
+            background: var(--surface-color); padding: 18px 24px; border-radius: var(--border-radius);
             border: 1px solid var(--border-color);
-            display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary);
-            font-size: 15px; font-weight: 600; outline: none;
-            box-shadow: 0 4px 12px var(--shadow-color);
+            display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text-primary);
+            font-size: 16px; font-weight: 600; outline: none;
+            box-shadow: 0 6px 16px var(--shadow-color);
         }
 
         .vsht-footer {
             display: flex; align-items: center; justify-content: center; gap: 12px;
-            margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 12px;
+            margin-top: 48px; font-family: 'Inter', sans-serif; font-size: 12px;
             color: var(--text-secondary); letter-spacing: 1px;
         }
         .footer-divider { opacity: 0.3; }
-        .write-us { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); text-decoration: none; opacity: 0.7; }
+        .write-us { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); text-decoration: none; opacity: 0.8; }
         .write-us .material-symbols-rounded { font-size: 14px; color: var(--text-secondary); }
 
         .admin-add-item-btn, #add-section-btn {
-            background: var(--price-bg); color: var(--text-secondary);
-            border: 1px dashed var(--border-color); border-radius: 12px; font-family: 'Inter', sans-serif;
-            padding: 12px; text-align: center; cursor: pointer;
-            display: none; width: calc(100% - 40px); margin: 0 auto 20px auto;
+            background: transparent; color: var(--text-secondary);
+            border: 1px dashed var(--border-color); border-radius: 14px; font-family: 'Inter', sans-serif;
+            padding: 14px; text-align: center; cursor: pointer;
+            display: none; width: calc(100% - 48px); margin: 0 auto 16px auto; font-size: 14px; font-weight: 600;
         }
         #add-section-btn {
-            width: 100%; margin-top: 10px; border-color: var(--accent-color); color: var(--accent-color);
-            font-weight: bold; background: var(--price-bg);
+            width: 100%; margin-top: 16px; border-color: var(--accent-color); color: var(--accent-color);
+            background: var(--price-bg); border-style: solid;
         }
 
         #export-btn {
-            position: fixed; bottom: 20px; right: 20px; background: var(--text-primary); color: var(--bg-color);
-            border: none; padding: 15px 20px; border-radius: 30px; font-family: 'Inter', sans-serif;
-            font-weight: 600; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: none; z-index: 1000;
+            position: fixed; bottom: 24px; right: 24px; background: var(--text-primary); color: var(--bg-color);
+            border: none; padding: 16px 24px; border-radius: 30px; font-family: 'Inter', sans-serif;
+            font-weight: 600; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); display: none; z-index: 1000; letter-spacing: 0.5px;
         }
         #export-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); z-index: 2000; padding: 20px; flex-direction: column;
+            background: rgba(0,0,0,0.9); z-index: 2000; padding: 24px; flex-direction: column;
         }
         #export-textarea {
-            width: 100%; height: 80%; background: #111; color: #0f0; font-family: monospace;
-            padding: 10px; border: 1px solid #333; border-radius: 10px; margin-bottom: 20px;
+            width: 100%; height: 80%; background: #111; color: #0f0; font-family: monospace; font-size: 13px;
+            padding: 16px; border: 1px solid #333; border-radius: 16px; margin-bottom: 24px; resize: none;
         }
-        #close-overlay { background: #fff; color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: bold; }
+        #close-overlay { background: #fff; color: #000; border: none; padding: 16px; border-radius: 12px; font-weight: bold; font-family: 'Inter', sans-serif; cursor: pointer;}
 
         #settings-panel {
-            display: none; position: fixed; top: 80px; right: 20px; background: var(--surface-color);
-            border: 1px solid var(--border-color); border-radius: 15px; padding: 15px; z-index: 100;
-            box-shadow: 0 10px 30px var(--shadow-color); width: 230px;
+            display: none; position: fixed; top: 90px; right: 24px; background: var(--surface-color);
+            border: 1px solid var(--border-color); border-radius: 20px; padding: 20px; z-index: 100;
+            box-shadow: 0 16px 40px var(--shadow-color); width: 260px;
         }
-        .settings-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; margin-top: 15px; font-family: 'Inter', sans-serif;}
+        .settings-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; margin-top: 20px; font-family: 'Inter', sans-serif;}
         .settings-label:first-child { margin-top: 0; }
         
         .settings-panel select {
-            width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-primary); font-family: 'Inter', sans-serif;
+            width: 100%; padding: 12px; border-radius: 12px; border: 1px solid var(--border-color); 
+            background: var(--bg-color); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 14px;
+            outline: none; cursor: pointer;
         }
-        
-        .palette-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-        .color-swatch {
-            width: 35px; height: 35px; border-radius: 50%; cursor: pointer;
-            border: 1px solid var(--border-color); transition: transform 0.2s;
-        }
-        .color-swatch:hover { transform: scale(1.15); }
     </style>
 </head>
 <body>
 
 <div class="main-content">
+    
+    <!-- === ШАБЛОН ДЛЯ БІЗНЕСУ (ШАПКА) ПОЧАТОК === -->
     <div class="header">
         <div class="header-info">
-            <img src="https://via.placeholder.com/100" alt="Logo" class="logo" id="business-logo">
+            <img src="https://via.placeholder.com/150" alt="Logo" class="logo" id="business-logo">
             <div class="business-name editable">Назва Бізнесу</div>
         </div>
         <button class="action-btn" id="admin-dots">
             <span class="material-symbols-rounded" style="color: var(--text-primary);">settings</span>
         </button>
     </div>
+    <!-- === ШАБЛОН ДЛЯ БІЗНЕСУ (ШАПКА) КІНЕЦЬ === -->
 
     <div id="settings-panel" class="settings-panel">
         <div class="settings-label">Тема сторінки</div>
         <select id="theme-selector">
-            <option value="dark">Темна (Дарк)</option>
-            <option value="light">Світла (Лайт)</option>
+            <option value="classic-light">1: Classic White</option>
+            <option value="dark-matcha" selected>2: Dark Matcha</option>
+            <option value="sand-bark">3: Sand & Bark</option>
+            <option value="cloud-peri">4: Cloud & Periwinkle</option>
+            <option value="almond-espresso">5: Almond & Espresso</option>
+            <option value="oat-charcoal">6: Oat & Charcoal</option>
+            <option value="bone-navy">7: Bone & Navy</option>
         </select>
 
         <div class="settings-label">Шрифт сторінки</div>
         <select id="font-selector">
             <option value="'Unbounded', sans-serif">Unbounded (Модерн)</option>
+            <option value="'Manrope', sans-serif">Manrope (Стиль)</option>
+            <option value="'Didact Gothic', sans-serif">Didact Gothic</option>
             <option value="'Montserrat', sans-serif">Montserrat (Класика)</option>
             <option value="'Montserrat Alternates', sans-serif">Mont. Alternates (Фан)</option>
             <option value="'Inter', sans-serif">Inter (Чистий)</option>
@@ -225,15 +274,9 @@
             <option value="'Prata', serif">Prata (Фешн)</option>
             <option value="'Marmelad', sans-serif">Marmelad</option>
         </select>
-
-        <div class="settings-label">Кольорова палітра</div>
-        <div class="palette-grid" id="palette-container"></div>
     </div>
 
-<!-- ========================================== -->
-<!-- ПОЧАТОК ШАБЛОНУ ДЛЯ БІЗНЕСУ -->
-<!-- ========================================== -->
-
+    <!-- === ШАБЛОН ДЛЯ БІЗНЕСУ (МЕНЮ) ПОЧАТОК === -->
     <div class="section-title editable">
         <span class="material-symbols-rounded">menu_book</span>
         Асортимент
@@ -258,6 +301,7 @@
     </div>
     
     <button id="add-section-btn">+ ДОДАТИ НОВИЙ РОЗДІЛ</button>
+    
     <div class="footer-links">
         <a href="tel:+380990000000" class="link-card editable">
             <span class="material-symbols-rounded">call</span>
@@ -268,10 +312,7 @@
             Валки, вул. Центральна 1
         </a>
     </div>
-
-<!-- ========================================== -->
-<!-- КІНЕЦЬ ШАБЛОНУ ДЛЯ БІЗНЕСУ -->
-<!-- ========================================== -->
+    <!-- === ШАБЛОН ДЛЯ БІЗНЕСУ (МЕНЮ) КІНЕЦЬ === -->
 
 </div>
 
@@ -306,20 +347,6 @@
         adminDots.style.display = 'flex';
         document.getElementById('export-btn').style.display = 'block';
         document.getElementById('add-section-btn').style.display = 'block';
-        
-        const colors = [
-            '#000000', '#FFFFFF', '#FF3B30', '#007AFF',
-            '#34C759', '#FF9500', '#AF52DE', '#DEFF9A'
-        ];
-
-        const paletteContainer = document.getElementById('palette-container');
-        colors.forEach(c => {
-            let swatch = document.createElement('div');
-            swatch.className = 'color-swatch';
-            swatch.style.backgroundColor = c;
-            swatch.onclick = () => document.documentElement.style.setProperty('--accent-color', c);
-            paletteContainer.appendChild(swatch);
-        });
 
         function makeEditable(nodes) {
             nodes.forEach(el => {
@@ -368,7 +395,6 @@
         document.getElementById('add-section-btn').addEventListener('click', () => {
             const wrapper = document.getElementById('menu-wrapper');
             const newDetails = document.createElement('details');
-            newDetails.open = true;
             newDetails.innerHTML = `
                 <summary class="editable">Новий Розділ</summary>
                 <div class="items-list-container">
