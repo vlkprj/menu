@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light" style="--tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh; --accent-color: #000000; --font-main: &quot;Montserrat Alternates&quot;, sans-serif;"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Міні-Апп | Меню</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&amp;family=Cormorant:wght@600&amp;family=Inter+Tight:wght@400;600&amp;family=Inter:wght@400;600&amp;family=Marmelad&amp;family=Montserrat+Alternates:wght@400;600&amp;family=Montserrat:wght@400;600&amp;family=Mulish:wght@400;700&amp;family=Prata&amp;family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&amp;family=Unbounded:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <style>
+        :root {
+            --font-main: 'Unbounded', sans-serif;
+            --accent-color: #DEFF9A;
+            --border-radius: 16px;
+            
+            --bg-color: #121212;
+            --surface-color: #1E1E1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --border-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --price-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #F5F5F7;
+            --surface-color: #FFFFFF;
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+            --border-color: #E5E5EA;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --price-bg: rgba(0, 0, 0, 0.05);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-synthesis: none;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-content { flex: 1; }
+        .material-symbols-rounded { vertical-align: middle; color: var(--accent-color); }
+
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--surface-color); padding: 15px 20px;
+            border-radius: var(--border-radius); margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+        .header-info { display: flex; align-items: center; gap: 15px; }
+        .logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background-color: var(--border-color); }
+        .business-name { font-size: 16px; font-weight: 600; outline: none; }
+        
+        .action-btn {
+            background: var(--price-bg); border: none; border-radius: 50%;
+            width: 40px; height: 40px; display: none; align-items: center;
+            justify-content: center; cursor: pointer; color: var(--text-primary);
+        }
+
+        .section-title {
+            font-size: 20px; font-weight: 600; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px; outline: none;
+        }
+
+        details { 
+            margin-bottom: 16px; 
+        }
+        summary {
+            background: var(--surface-color); 
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 18px 20px; font-size: 16px; font-weight: 600; cursor: pointer;
+            list-style: none; display: flex; justify-content: space-between; align-items: center; outline: none;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '\e313'; font-family: 'Material Symbols Rounded'; color: var(--text-secondary); font-size: 24px; transition: transform 0.3s ease; }
+        
+        details[open] summary {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom: 1px dashed var(--border-color);
+            box-shadow: none;
+        }
+        details[open] summary::after { transform: rotate(180deg); }
+
+        .items-list-container {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-bottom-left-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            box-shadow: 0 8px 12px var(--shadow-color);
+        }
+
+        .items-list { padding: 0 20px 20px 20px; display: flex; flex-direction: column; gap: 16px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px dashed var(--border-color); }
+        .items-list .item:first-child { border-top: none; padding-top: 15px; }
+        
+        .item-content-wrapper { flex: 1; padding-right: 15px; min-width: 0; }
+        .item-name { font-size: 15px; color: var(--text-primary); outline: none; word-wrap: break-word; overflow-wrap: break-word; }
+        .item-desc { font-size: 12px; color: var(--text-secondary); margin-top: 4px; font-family: 'Inter', sans-serif; outline: none; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.4; }
+        
+        .price {
+            background: var(--price-bg); color: var(--accent-color);
+            padding: 6px 12px; border-radius: 12px; font-size: 14px; font-weight: 600;
+            white-space: nowrap; outline: none; flex-shrink: 0;
+        }
+        .price::after { content: ' ₴'; }
+
+        .footer-links { margin-top: 30px; display: flex; flex-direction: column; gap: 10px; }
+        .link-card {
+            background: var(--surface-color); padding: 16px 20px; border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-primary);
+            font-size: 15px; font-weight: 600; outline: none;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .vsht-footer {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 12px;
+            color: var(--text-secondary); letter-spacing: 1px;
+        }
+        .footer-divider { opacity: 0.3; }
+        .write-us { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); text-decoration: none; opacity: 0.7; }
+        .write-us .material-symbols-rounded { font-size: 14px; color: var(--text-secondary); }
+
+        .admin-add-item-btn, #add-section-btn {
+            background: var(--price-bg); color: var(--text-secondary);
+            border: 1px dashed var(--border-color); border-radius: 12px; font-family: 'Inter', sans-serif;
+            padding: 12px; text-align: center; cursor: pointer;
+            display: none; width: calc(100% - 40px); margin: 0 auto 20px auto;
+        }
+        #add-section-btn {
+            width: 100%; margin-top: 10px; border-color: var(--accent-color); color: var(--accent-color);
+            font-weight: bold; background: var(--price-bg);
+        }
+
+        #export-btn {
+            position: fixed; bottom: 20px; right: 20px; background: var(--text-primary); color: var(--bg-color);
+            border: none; padding: 15px 20px; border-radius: 30px; font-family: 'Inter', sans-serif;
+            font-weight: 600; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: none; z-index: 1000;
+        }
+        #export-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 2000; padding: 20px; flex-direction: column;
+        }
+        #export-textarea {
+            width: 100%; height: 80%; background: #111; color: #0f0; font-family: monospace;
+            padding: 10px; border: 1px solid #333; border-radius: 10px; margin-bottom: 20px;
+        }
+        #close-overlay { background: #fff; color: #000; border: none; padding: 15px; border-radius: 10px; font-weight: bold; }
+
+        #settings-panel {
+            display: none; position: fixed; top: 80px; right: 20px; background: var(--surface-color);
+            border: 1px solid var(--border-color); border-radius: 15px; padding: 15px; z-index: 100;
+            box-shadow: 0 10px 30px var(--shadow-color); width: 230px;
+        }
+        .settings-label { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; margin-top: 15px; font-family: 'Inter', sans-serif;}
+        .settings-label:first-child { margin-top: 0; }
+        
+        .settings-panel select {
+            width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-primary); font-family: 'Inter', sans-serif;
+        }
+        
+        .palette-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .color-swatch {
+            width: 35px; height: 35px; border-radius: 50%; cursor: pointer;
+            border: 1px solid var(--border-color); transition: transform 0.2s;
+        }
+        .color-swatch:hover { transform: scale(1.15); }
+    </style>
+</head>
+<body>
+
+<div class="main-content">
+    <div class="header">
+        <div class="header-info">
+            <img src="img/coffeeone.webp" alt="Logo" class="logo" id="business-logo">
+            <div class="business-name editable" style="">CoffeeOne</div>
+        </div>
+        <button class="action-btn" id="admin-dots" style="display: none;">
+            <span class="material-symbols-rounded" style="color: var(--text-primary);">settings</span>
+        </button>
+    </div>
+
+    <div id="settings-panel" class="settings-panel" style="display: none;">
+        <div class="settings-label">Тема сторінки</div>
+        <select id="theme-selector">
+            <option value="dark">Темна (Дарк)</option>
+            <option value="light">Світла (Лайт)</option>
+        </select>
+
+        <div class="settings-label">Шрифт сторінки</div>
+        <select id="font-selector">
+            <option value="'Unbounded', sans-serif">Unbounded (Модерн)</option>
+            <option value="'Montserrat', sans-serif">Montserrat (Класика)</option>
+            <option value="'Montserrat Alternates', sans-serif">Mont. Alternates (Фан)</option>
+            <option value="'Inter', sans-serif">Inter (Чистий)</option>
+            <option value="'Inter Tight', sans-serif">Inter Tight</option>
+            <option value="'Roboto Flex', sans-serif">Roboto Flex</option>
+            <option value="'Mulish', sans-serif">Mulish</option>
+            <option value="'Arimo', sans-serif">Arimo</option>
+            <option value="'Cormorant', serif">Cormorant (Естетика)</option>
+            <option value="'Prata', serif">Prata (Фешн)</option>
+            <option value="'Marmelad', sans-serif">Marmelad</option>
+        </select>
+
+        <div class="settings-label">Кольорова палітра</div>
+        <div class="palette-grid" id="palette-container"><div class="color-swatch" style="background-color: rgb(0, 0, 0);"></div><div class="color-swatch" style="background-color: rgb(255, 255, 255);"></div><div class="color-swatch" style="background-color: rgb(255, 59, 48);"></div><div class="color-swatch" style="background-color: rgb(0, 122, 255);"></div><div class="color-swatch" style="background-color: rgb(52, 199, 89);"></div><div class="color-swatch" style="background-color: rgb(255, 149, 0);"></div><div class="color-swatch" style="background-color: rgb(175, 82, 222);"></div><div class="color-swatch" style="background-color: rgb(222, 255, 154);"></div></div>
+    </div>
+
+<!-- ========================================== -->
+<!-- ПОЧАТОК ШАБЛОНУ ДЛЯ БІЗНЕСУ -->
+<!-- ========================================== -->
+
+    <div class="section-title editable" style="">
+        <span class="material-symbols-rounded">menu_book</span>
+        Асортимент
+    </div>
+
+    <div id="menu-wrapper">
+        <details>
+            <summary class="editable" style="">Приклад Категорії</summary>
+            <div class="items-list-container">
+                <div class="items-list">
+                    <div class="item">
+                        <div class="item-content-wrapper">
+                            <div class="item-name editable" style="">Назва позиції</div>
+                            <div class="item-desc editable" style="">Опис позиції (можна стерти)</div>
+                        </div>
+                        <div class="price editable" style="">0</div>
+                    </div>
+                </div>
+                <button class="admin-add-item-btn" style="display: none;">+ Додати позицію</button>
+            </div>
+        </details>
+    </div>
+    
+    <button id="add-section-btn" style="display: none;">+ ДОДАТИ НОВИЙ РОЗДІЛ</button>
+    <div class="footer-links">
+        <a href="tel:+380990000000" class="link-card editable" style="">
+            <span class="material-symbols-rounded">call</span>
+            Зателефонувати
+        </a>
+        <a href="https://maps.google.com" target="_blank" class="link-card editable" style="">
+            <span class="material-symbols-rounded">location_on</span>
+            Валки, вул. Центральна 1
+        </a>
+    </div>
+
+<!-- ========================================== -->
+<!-- КІНЕЦЬ ШАБЛОНУ ДЛЯ БІЗНЕСУ -->
+<!-- ========================================== -->
+
+</div>
+
+<div class="vsht-footer">
+    <span>ВШТ • РЕКЛАМА</span>
+    <span class="footer-divider">•</span>
+    <a href="https://t.me/valkysho_bot" target="_blank" class="write-us">
+        <span class="material-symbols-rounded">chat_bubble</span>
+        Написати
+    </a>
+</div>
+
+<button id="export-btn" style="display: none;">ЗБЕРЕГТИ КОД</button>
+
+<div id="export-overlay" style="display: none;">
+    <textarea id="export-textarea"></textarea>
+    <button id="close-overlay">ЗАКРИТИ ТА ПОВЕРНУТИСЬ</button>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const tgStartParam = window.Telegram?.WebApp?.initDataUnsafe?.start_param;
+    const isAdmin = urlParams.get('admin') === 'boss' || tgStartParam === 'adminboss';
+
+    if (isAdmin) {
+        const adminDots = document.getElementById('admin-dots');
+        const settingsPanel = document.getElementById('settings-panel');
+        const fontSelector = document.getElementById('font-selector');
+        const themeSelector = document.getElementById('theme-selector');
+        const logo = document.getElementById('business-logo');
+        
+        adminDots.style.display = 'flex';
+        document.getElementById('export-btn').style.display = 'block';
+        document.getElementById('add-section-btn').style.display = 'block';
+        
+        const colors = [
+            '#000000', '#FFFFFF', '#FF3B30', '#007AFF',
+            '#34C759', '#FF9500', '#AF52DE', '#DEFF9A'
+        ];
+
+        const paletteContainer = document.getElementById('palette-container');
+        colors.forEach(c => {
+            let swatch = document.createElement('div');
+            swatch.className = 'color-swatch';
+            swatch.style.backgroundColor = c;
+            swatch.onclick = () => document.documentElement.style.setProperty('--accent-color', c);
+            paletteContainer.appendChild(swatch);
+        });
+
+        function makeEditable(nodes) {
+            nodes.forEach(el => {
+                el.setAttribute('contenteditable', 'true');
+                el.style.borderBottom = '1px dashed var(--text-secondary)'; 
+            });
+        }
+
+        makeEditable(document.querySelectorAll('.editable'));
+        document.querySelectorAll('.admin-add-item-btn').forEach(btn => btn.style.display = 'block');
+
+        adminDots.addEventListener('click', () => {
+            settingsPanel.style.display = settingsPanel.style.display === 'block' ? 'none' : 'block';
+        });
+
+        fontSelector.addEventListener('change', (e) => {
+            document.documentElement.style.setProperty('--font-main', e.target.value);
+        });
+
+        themeSelector.addEventListener('change', (e) => {
+            document.documentElement.setAttribute('data-theme', e.target.value);
+        });
+
+        logo.addEventListener('click', () => {
+            const newUrl = prompt("Вставте посилання на нове лого:", logo.src);
+            if (newUrl) logo.src = newUrl;
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.className === 'admin-add-item-btn') {
+                const itemsList = e.target.previousElementSibling;
+                const newItem = document.createElement('div');
+                newItem.className = 'item';
+                newItem.innerHTML = `
+                    <div class="item-content-wrapper">
+                        <div class="item-name editable">Нова позиція</div>
+                        <div class="item-desc editable">Опис</div>
+                    </div>
+                    <div class="price editable">0</div>
+                `;
+                itemsList.appendChild(newItem);
+                makeEditable(newItem.querySelectorAll('.editable'));
+            }
+        });
+
+        document.getElementById('add-section-btn').addEventListener('click', () => {
+            const wrapper = document.getElementById('menu-wrapper');
+            const newDetails = document.createElement('details');
+            newDetails.open = true;
+            newDetails.innerHTML = `
+                <summary class="editable">Новий Розділ</summary>
+                <div class="items-list-container">
+                    <div class="items-list">
+                        <div class="item">
+                            <div class="item-content-wrapper">
+                                <div class="item-name editable">Нова позиція</div>
+                                <div class="item-desc editable">Опис</div>
+                            </div>
+                            <div class="price editable">0</div>
+                        </div>
+                    </div>
+                    <button class="admin-add-item-btn" style="display: block;">+ Додати позицію</button>
+                </div>
+            `;
+            wrapper.appendChild(newDetails);
+            makeEditable(newDetails.querySelectorAll('.editable'));
+        });
+
+        document.getElementById('export-btn').addEventListener('click', () => {
+            settingsPanel.style.display = 'none';
+            let cleanDOM = document.documentElement.cloneNode(true);
+            
+            cleanDOM.querySelectorAll('.editable').forEach(el => {
+                el.removeAttribute('contenteditable');
+                el.style.borderBottom = '';
+            });
+            cleanDOM.querySelector('#admin-dots').style.display = 'none';
+            cleanDOM.querySelector('#export-btn').style.display = 'none';
+            cleanDOM.querySelector('#settings-panel').style.display = 'none';
+            cleanDOM.querySelector('#export-overlay').style.display = 'none';
+            
+            cleanDOM.querySelectorAll('.admin-add-item-btn, #add-section-btn').forEach(btn => btn.style.display = 'none');
+            
+            let finalHTML = "<!DOCTYPE html>\n" + cleanDOM.outerHTML;
+            
+            document.getElementById('export-overlay').style.display = 'flex';
+            document.getElementById('export-textarea').value = finalHTML;
+        });
+
+        document.getElementById('close-overlay').addEventListener('click', () => {
+            document.getElementById('export-overlay').style.display = 'none';
+        });
+    }
+</script>
+
+
+
+</body></html>
